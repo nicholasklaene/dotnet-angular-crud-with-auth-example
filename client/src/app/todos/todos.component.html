@@ -1,0 +1,20 @@
+<nav>
+  <button (click)="clearStorageAndLogout()">Logout</button>
+</nav>
+
+<ul>
+  <app-todo
+    (notifyParent)="removeTodo($event)"
+    *ngFor="let todo of todos"
+    [todo]="todo"
+  ></app-todo>
+</ul>
+
+<div>
+  <button (click)="toggleModal()">Create new todo</button>
+
+  <form *ngIf="showModal" [formGroup]="newTodoForm" (ngSubmit)="createTodo()">
+    <input placeholder="New Todo" formControlName="description" required />
+    <button type="submit">Submit</button>
+  </form>
+</div>

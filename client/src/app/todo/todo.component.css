@@ -1,0 +1,19 @@
+li {
+  padding: 1rem 0.5rem;
+  border-bottom: thin solid lightgray;
+  width: 100%;
+  display: flex;
+}
+
+.btns {
+  display: inline-block;
+  margin-left: auto;
+}
+
+button {
+  margin-left: 0.5rem;
+}
+
+.complete {
+  text-decoration: line-through;
+}

@@ -1,0 +1,19 @@
+<h1 *ngIf="loginMode">Login</h1>
+<h1 *ngIf="!loginMode">Register</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="username">
+    <input type="text" formControlName="username" required />
+  </label>
+
+  <label for="password">
+    <input type="password" formControlName="password" required />
+  </label>
+
+  <button type="submit">Login</button>
+</form>
+
+<a (click)="toggleMode()" style="cursor: pointer; text-decoration: underline">
+  <span *ngIf="loginMode">Don't have an account? Create one.</span>
+  <span *ngIf="!loginMode">Already have an account? Login.</span>
+</a>

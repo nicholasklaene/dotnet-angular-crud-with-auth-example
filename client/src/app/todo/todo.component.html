@@ -1,0 +1,16 @@
+<li>
+  <span *ngIf="!editable" [ngClass]="{ complete: todo.complete }">{{
+    todo.description
+  }}</span>
+  <span *ngIf="editable">
+    <input type="text" [(ngModel)]="todo.description" />
+  </span>
+  <span class="btns">
+    <button (click)="toggleEditable()">Update</button>
+    <button (click)="changeCompletion()">
+      <span *ngIf="!todo.complete">Mark Complete</span>
+      <span *ngIf="todo.complete">Mark Incomplete</span>
+    </button>
+    <button (click)="deleteTodo()">Delete</button>
+  </span>
+</li>
